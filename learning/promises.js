@@ -1,20 +1,29 @@
 import fetch from 'node-fetch';
 
-const username = "marcpre";
+const str = "get";
 
 function getProfile() {
-    return fetch("https://api.github.com/${username}");
+    return fetch(`http://httpbin.org/${str}`);
 }
 
+//http://httpbin.org/get
+
 function getRepo() {
-    return fetch("https://api.github.com/${username}/repo");
+    let repo = `https://httpbin.org/user-agent`
+//    console.log(repo)
+    return fetch(repo);
 }
 
 getProfile()
-    .then((profileResponse) => profileResponse.json())
+    .then((profileResponse) => {
+        return profileResponse.json()
+    })
     .then((profile) => {
         return getRepo()
-            .then((repoResponse) => repoResponse.json())
+            .then((repoResponse) => {
+                return repoResponse.json()
+
+            })
             .then((repos) => {
                 return {
                     repos,
