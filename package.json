@@ -11,8 +11,11 @@
     "babel-polyfill": "^6.23.0",
     "eslint": "^4.4.1",
     "express": "~3.2.4",
+    "knex": "^0.13.0",
+    "lodash": "^4.17.4",
     "node-fetch": "^1.7.2",
     "nodemon": "^1.11.0",
+    "scrape-it": "^3.3.2",
     "socket.io": "~0.9.14"
   },
   "devDependencies": {
